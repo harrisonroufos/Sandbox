@@ -8,7 +8,7 @@ import random
 def main():
     """Simulate a die/dice roll"""
     print("Welcome to the dice roll simulator.")
-    print("Enter 0 quit.")
+    print("Enter 0 to quit.")
     number_of_die = get_valid_die_amount()
     while number_of_die != 0:
         simulate_dice_roll(number_of_die)

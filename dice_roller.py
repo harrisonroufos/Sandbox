@@ -18,12 +18,13 @@ def main():
 
 
 def simulate_dice_roll(number_of_die):
-    """Simulate dice roll"""
+    """Simulate die/dice roll"""
     for i in range(number_of_die):
         print(random.randint(1, 6))
 
 
 def get_valid_die_amount():
+    """Get valid die/dice amount"""
     number_of_die = (input("Number of die: "))
     while number_of_die.isnumeric() is False:
         print("Invalid")

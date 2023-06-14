@@ -25,11 +25,13 @@ def simulate_dice_roll(number_of_die):
 
 def get_valid_die_amount():
     """Get valid die/dice amount"""
-    number_of_die = (input("Number of die: "))
-    while number_of_die.isnumeric() is False:
-        print("Invalid")
-        number_of_die = (input("Number of die: "))
-    number_of_die = int(number_of_die)
+    is_valid_input = False
+    while not is_valid_input:
+        try:
+            number_of_die = int(input("Number of die: "))
+            is_valid_input = True
+        except ValueError:
+            print("Invalid")
     return number_of_die
 
 

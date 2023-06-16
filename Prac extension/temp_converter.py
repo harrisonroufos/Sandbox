@@ -1,17 +1,20 @@
 """CP1402 PRAC 2 EXTENSION with extra"""
-import random
-
-OUT_FILE = "temps_input.txt"  # is a file with 15 random float value between -200 and +200
+IN_FILE = "temps_input.txt"  # a file with any amount of floats each on their own line
+OUT_FILE = "temps_output.txt"  # a file that will collect the fahrenheit to celsius numbers
 
 
 def main():
+    """Converts fahrenheit temp from file and converts to celsius and outputs to file """
     out_file = open(OUT_FILE, "w")
+    in_file = open(IN_FILE, "r")
 
-    for i in range(15):
-        random_temperature_fahrenheit = random.uniform(-200, 200)
-        print(f"{random_temperature_fahrenheit}", file=out_file)
-
+    for line in in_file:
+        line = float(line)
+        convert_temp = convert_fahrenheit_to_celsius(line)
+        print(f"{convert_temp}", file=out_file)
     out_file.close()
+    in_file.close()
+    print("Finished")
 
 
 def convert_fahrenheit_to_celsius(fahrenheit: float):
